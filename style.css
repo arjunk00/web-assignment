@@ -9,6 +9,9 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 9px;
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #333333;
 }
 .logo{
@@ -39,6 +42,7 @@ li,a,button{
 header button{
     padding: 9px 25px;
     background-color: #385D6C;
+    margin-right: 35px;
     border: none;
     border-radius: 60px;
     transition: all 0.4s ease 0s;
@@ -55,7 +59,7 @@ body {
 .signup-form{
     font-family: "Montserrat", sans-serif;
     width: 650px;
-    margin: 45px auto;
+    margin: 5% auto;
     background: linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
