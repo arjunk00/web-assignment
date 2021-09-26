@@ -102,6 +102,7 @@ body {
     height: 34px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 8px;
     color: #333333;
     text-align: left;
     border: 1px solid #d6d6d6;
@@ -187,4 +188,8 @@ input[type="file"] {
 .btn:hover {
     background-color: #169c7b;
     color:white;
+}
+
+.input-group{
+    margin-top: 8px;
 }
