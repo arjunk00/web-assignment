@@ -58,10 +58,13 @@ body {
 
 .signup-form{
     font-family: "Montserrat", sans-serif;
-    width: 650px;
+    max-width: 650px;
+    width: 100%;
     margin: 5% auto;
     background: linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
+    margin-top: 100px;
+    margin-bottom: auto;
 }
 
 .form-header{
@@ -197,4 +200,36 @@ input[type="file"] {
 
 .input-group{
     margin-top: 8px;
+}
+
+@media (max-width: 584px){
+    .signup-form{
+        max-width: 100%;
+    }
+    .form-body .form-input{
+        font-size: 17px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 34px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 8px;
+        color: #333333;
+        text-align: left;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        background: white;
+        outline: none;
+    }
+    .input-group{
+        width: 100%;
+    }
+    .form-body .label-title{
+        max-height: 300px;
+    }
+    .signup-form{
+        max-height: 100%;
+        overflow-y: scroll;
+    }
+        
 }
