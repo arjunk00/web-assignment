@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Count</title>
+  </head>
+  <body>
+    <textarea
+      name="textinput"
+      id="text_input"
+      cols="40"
+      rows="15"
+      placeholder="Enter text here">
+    </textarea>
+    <br>
+    <button id="sub">Submit</button>
+    <script>
+      document.getElementById("sub").addEventListener("click", function () {
+        var str = document.getElementById("text_input").value;
+        alert(
+          "Word count is " + str.split(" ").filter((x) => x !== "").length + "\nLine count is " +
+            ((str.match(/\n/g) || "").length + 1)
+        );
+      });
+    </script>
+  </body>
+</html>

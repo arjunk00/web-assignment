@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SQUARES AND CUBES</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.write('<p><b>TABLE THAT PRINTS SQUARES AND CUBES FROM 0 TO 10</b></p>');
+      document.write('<table border="2" cellspacing="3">');
+      document.write("<th>number</th><th>square</th><th>cube</th>");
+      for (var i = 0; i < 11; i++) {
+        document.write("<tr><td>"+i+"</td><td>"+i*i+"</td><td>"+i**3+"</td></tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>
