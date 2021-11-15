@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        form{
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+        input[type=button] {
+            background-color: #04AA6D;
+        }
+        .container {
+            background-color: #f1f1f1;
+            border: 4px solid black;
+            font-family: "Montserrat", sans-serif;
+            padding: 20px;
+            max-width: 50%;
+            margin-left: 25%;
+            margin-top: 10%;
+        }
+        button{
+            padding: 2px;
+        }
+        input[type="radio"]{
+            display: inline;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="container"
+    <form action="form.html" method="get" class="frm" autocapitalize>
+
+        <label for="name"> Enter your name :</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="mail"> Enter your mail :</label>
+        <input type="email" name="mail" id ="mail" required>
+
+        <label for="age"> Enter your age :</label>
+        <input type="number" name="age" id="age" >
+
+        <label>  
+            Gender:   
+            </label>  <br>  
+            <input type="radio" id="gender" name="gender" value="male"/> Male    
+            <br>  
+            <input type="radio" id="gender" name="gender" value="female"/> Female <br/>   
+
+        <br><br>
+        <center><button>SUBMIT</button></center>
+    </form>
+    </div>
+</body>
+</html>
