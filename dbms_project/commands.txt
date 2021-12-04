@@ -1,0 +1,74 @@
+Create Employee
+CREATE TABLE `airline_db`.`employee` ( `employee_id` VARCHAR(10) NOT NULL , `employee_name` VARCHAR(30) NOT NULL , `joining_date` DATE NOT NULL , `designation` VARCHAR(50) NOT NULL , `salary` INT NOT NULL , `role` INT(50) NOT NULL , `date_of_birth` INT NOT NULL , `gender` CHAR(1) NOT NULL , PRIMARY KEY (`employee_id`)) ENGINE = InnoDB; 
+
+Create Employee Phone Nmuber
+CREATE TABLE `airline_db`.`employee_phone_no` ( `employee_id` VARCHAR(10) NOT NULL , `phone_no` VARCHAR(15) NOT NULL , PRIMARY KEY (`employee_id`, `phone_no`)) ENGINE = InnoDB; 
+
+Create employee email
+CREATE TABLE `airline_db`.`employee_email` ( `employee_id` VARCHAR(10) NOT NULL , `email` INT(50) NOT NULL , PRIMARY KEY (`employee_id`, `email`)) ENGINE = InnoDB; 
+
+Create employee address
+CREATE TABLE `airline_db`.`employee_address` ( `employee_id` VARCHAR(10) NOT NULL , `house_no` INT(10) NOT NULL , `street` INT(50) NOT NULL , `locality` INT(50) NOT NULL , `city` INT(50) NOT NULL , `country` INT(50) NOT NULL , PRIMARY KEY (`employee_id`)) ENGINE = InnoDB; 
+
+Create plane_no -> model
+CREATE TABLE `airline_db`.`fleet` ( `plane_no` VARCHAR(15) NOT NULL , `model` VARCHAR(20) NOT NULL , PRIMARY KEY (`plane_no`)) ENGINE = InnoDB; 
+
+Create model -> capacity
+CREATE TABLE `airline_db`.`plane_capacity` ( `plane_model` VARCHAR(20) NOT NULL , `capacity` SMALLINT UNSIGNED NOT NULL DEFAULT '300' , PRIMARY KEY (`plane_model`)) ENGINE = InnoDB; 
+
+create airport data 
+CREATE TABLE `airline_db`.`airport_freqency` ( `airport_code` VARCHAR(10) NOT NULL , `airport_name` VARCHAR(60) NOT NULL , `frequency` TINYINT UNSIGNED NOT NULL DEFAULT '1' , PRIMARY KEY (`airport_code`)) ENGINE = InnoDB; 
+
+create flights table
+CREATE TABLE `airline_db`.`flight_plan` ( `flight_no` INT(10) NOT NULL , `plane_no` VARCHAR(15) NOT NULL , `arrival_airport_code` VARCHAR(10) NOT NULL , `arrival_time` DATE NOT NULL , `departure_airport_code` VARCHAR(10) NOT NULL , `departure_time` DATE NOT NULL , PRIMARY KEY (`flight_no`)) ENGINE = InnoDB; 
+
+
+create customer TABLE
+CREATE TABLE `airline_db`.`customer` ( `user_name` VARCHAR(30) NOT NULL , `password` VARCHAR(50) NOT NULL , `cust_name` VARCHAR(30) NOT NULL , `gender` CHAR(1) NOT NULL , `date_of_birth` DATE NOT NULL , PRIMARY KEY (`user_name`)) ENGINE = InnoDB;
+create customer phone number table
+CREATE TABLE `airline_db`.`customer_phone_no` ( `user_name` VARCHAR(30) NOT NULL , `phone_no` VARCHAR(15) NOT NULL , PRIMARY KEY (`user_name`, `phone_no`)) ENGINE = InnoDB;
+create table customer_email
+CREATE TABLE `airline_db`.`customer_email` ( `user_name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , PRIMARY KEY (`user_name`, `email`)) ENGINE = InnoDB;
+create table cust address
+CREATE TABLE `airline_db`.`customer_address` ( `user_name` VARCHAR(30) NOT NULL , `house_no` VARCHAR(20) NOT NULL , `street` VARCHAR(50) NOT NULL , `locality` VARCHAR(50) NOT NULL , `city` VARCHAR(50) NOT NULL , `country` VARCHAR(50) NOT NULL , PRIMARY KEY (`user_name`)) ENGINE = InnoDB;
+
+create table booking
+CREATE TABLE `airline_db`.`booking` ( `booking_id` VARCHAR(30) NOT NULL , `user_name` VARCHAR(30) NOT NULL , `booking_date` DATE NOT NULL , `flight_no` VARCHAR(10) NOT NULL , `no_of_passengers` TINYINT UNSIGNED NOT NULL DEFAULT '0' , `board_date` DATE NOT NULL , `transaction_id` VARCHAR(50) NOT NULL UNIQUE , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+create table passenger names
+CREATE TABLE `airline_db`.`passenger_names` ( `booking_id` VARCHAR(30) NOT NULL , `passenger_name` VARCHAR(50) NOT NULL , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+create table transaction
+CREATE TABLE `airline_db`.`transaction` ( `transaction_id` VARCHAR(50) NOT NULL , `transaction_mode` VARCHAR(20) NOT NULL , `transaction_amount` INT NOT NULL , PRIMARY KEY (`transaction_id`)) ENGINE = InnoDB;
+
+
+foreign key addr cust
+ALTER TABLE `customer_address` ADD FOREIGN KEY (`user_name`) REFERENCES `customer`(`user_name`) ON DELETE CASCADE ON UPDATE CASCADE; 
+
+foreign key customer_email
+ALTER TABLE `customer_email` ADD FOREIGN KEY (`user_name`) REFERENCES `customer`(`user_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+foreign key cust phone
+ALTER TABLE `customer_phone_no` ADD FOREIGN KEY (`user_name`) REFERENCES `customer`(`user_name`) ON DELETE CASCADE ON UPDATE CASCADE; 
+
+
+foreign key employee email
+ALTER TABLE `employee_email` ADD FOREIGN KEY (`employee_id`) REFERENCES `employee`(`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+foreign key employee phone
+ALTER TABLE `employee_phone_no` ADD FOREIGN KEY (`employee_id`) REFERENCES `employee`(`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+foreign key employee addr
+ALTER TABLE `employee_address` ADD FOREIGN KEY (`employee_id`) REFERENCES `employee`(`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE; 
+
+foreign key transaction 
+ALTER TABLE `transaction` ADD FOREIGN KEY (`transaction_id`) REFERENCES `booking`(`transaction_id`) ON DELETE RESTRICT ON UPDATE RESTRICT; 
+
+foreign key passenger names on booking
+ALTER TABLE `passenger_names` ADD FOREIGN KEY (`booking_id`) REFERENCES `booking`(`booking_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+
+Insert
+
+
